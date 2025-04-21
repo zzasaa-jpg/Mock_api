@@ -1,7 +1,13 @@
-let arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' ];
+let arr = [];
+let num_arr = [];
 let is = [true, false];
-let num_arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 let gender = ["Female", "Male"];
+
+function ascii (initialization, condition, array){
+	for (let i = initialization; i <= condition; i++){
+		array.push(String.fromCharCode(i))
+	}
+}
 
 function a(i) {
 	return {
@@ -15,10 +21,10 @@ function a(i) {
 
 for (let i = 1; i<=100; i++){
 	//console.log(a(i))
-	console.log(like(i))
+	//console.log(like(i))
 	//console.log(todo(i))
 	//console.log(Book(i))
-	//console.table(Profile(i))
+	console.table(Profile(i))
 	//console.log(Cart(i))
 	/*console.log(Article(i))
 	console.log(Blog(i))
@@ -26,9 +32,10 @@ for (let i = 1; i<=100; i++){
 }
 
 function b(arr,number){
-let c =[];
-        for (let i = 0; i < number; i++){
-		c.push(arr[Math.floor(Math.random()*26)]);
+	ascii(65, 122, arr);
+	let c =[];
+	for (let i = 0; i < number; i++){
+		c.push(arr[Math.floor(Math.random()*58)]);
         }
 	return c.join('');
 }
@@ -38,6 +45,7 @@ function Is(){
 }
 //------------------------------------
 function numbers(num){
+	ascii(48, 57, num_arr);
 	let store_numbers = [];
 	for (let i = 0; i < num; i++){
 		store_numbers.push(num_arr[Math.floor(Math.random()*10)]);
