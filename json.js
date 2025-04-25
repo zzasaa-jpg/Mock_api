@@ -22,13 +22,14 @@ function a(i) {
 for (let i = 1; i<=100; i++){
 	//console.log(a(i))
 	//console.log(like(i))
+	//console.log(comments(i));
 	//console.log(todo(i))
 	//console.log(Book(i))
-	console.table(Profile(i))
+	//console.log(Profile(i))
 	//console.log(Cart(i))
-	/*console.log(Article(i))
-	console.log(Blog(i))
-	console.log(Post(i))*/
+	//console.log(Article(i))
+	//console.log(Blog(i))
+	console.log(Post(i))
 }
 
 function b(arr,number){
@@ -59,14 +60,7 @@ function gender_(){
 //------------------------------------
 function like(i){
 	return {
-		"Is_like":Is(),
-		"Comments": {
-			"User_name": b(arr, 10),
-			"User_id": b(arr, 10),
-			"Time": Date.now(),
-			"Is_like":Is(),
-			"Content": b(arr, 100),
-		},
+		"like":numbers(4),
 		"Id":i
 	}
 }
@@ -94,6 +88,7 @@ function Profile(i){
 	let number_value = numbers(2);
 	return {
 		"User_name":b(arr, 10),
+		"Profile_image": 'User_image',
 		"Role": b(arr, 14),
 		"age":(number_value <= 18) ? 25 : number_value,
 		"gender":gender_(),
@@ -106,6 +101,7 @@ function Cart(i){
 	let number_value = numbers(1), price_value = numbers(3);
 	return {
 		"Item_name":b(arr, 10),
+		"Item_image": "Item_image",
 		"Price": (price_value === 0) ? 14 : price_value,
 		"Quantity": (number_value === 0) ? 5 : number_value,
 		"Id":i
@@ -135,18 +131,30 @@ function Blog(i){
 function Post(i){
 	return {
 		"User_name":b(arr, 10),
-		"User_image": "Img",
+		"User_image": "User_image",
 		"User_id": b(arr, 10),
-		"Post_img":[],
-		"Post_video":[],
+		"Post_img":["https://thumbs.dreamstime.com/b/amazing-vector-icon-img-file-editable-design-268852424.jpg"],
+		"Post_video":["29700973 2480792-hd_1920_1080_24fps.mp4", "29700973 2480792-hd_1920_1080_24fps.mp4"],
 		"Post_Content": b(arr, 50),
-		"Post_like": Is(),
+		"Post_like": numbers(4),
 		"Post_comment":{
 			"User_name": b(arr, 10),
-                        "User_id": b(arr, 10),                                                  "Time": Date.now(),
-                        "Is_like":Is(),
+                        "User_id": b(arr, 10),
+			"Time": Date.now(),
+                        "like":numbers(4),
                         "Content": b(arr, 100),
 		},
 		"Id":i
+	}
+}
+
+function comments(i){
+	return {
+		"User_name": b(arr, 10),
+		"User_id": b(arr, 10),
+		"Time": Date.now(),
+		"like": numbers(4),
+		"Content": b(arr, 100),
+		"Id":i,
 	}
 }
